@@ -104,7 +104,7 @@
       $.ajax({
         type: "GET",
         //YOUR TURN: https://docs.google.com/spreadsheets/d/e/2PACX-1vSz43gt12569dNc3iS7ZJJJ7uzWAoXeXOKzxW0JOVzE7Mq4HetaVDbeUu1QmgahxK2uhbizVTpb1_zE/pub?gid=0&single=true&output=csv
-        url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSz43gt12569dNc3iS7ZJJJ7uzWAoXeXOKzxW0JOVzE7Mq4HetaVDbeUu1QmgahxK2uhbizVTpb1_zE/pub?gid=0&single=true&output=csv',
+        url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRkx41_9oskjYdJFA2RatZZDYyya8wUmW6OFupXre0ZSXtFrS3F4I0cm1Hnbi2NhukI2JsQG5neVh-O/pub?gid=749684910&single=true&output=csv',
         dataType: "text",
         success: function (csvData) { makeGeoJSON(csvData); }
       });
@@ -129,7 +129,7 @@
               },
               'paint': {
                 'circle-radius': 5,
-                'circle-color': "purple"
+                'circle-color': "orange"
               }
             });
 
@@ -142,7 +142,7 @@
               //set popup text 
               //You can adjust the values of the popup to match the headers of your CSV. 
               // For example: e.features[0].properties.Name is retrieving information from the field Name in the original CSV. 
-              var description = `<h3>` + e.features[0].properties.Name + `</h3>` + `<h4>` + `<b>` + `Address: ` + `</b>` + e.features[0].properties.Address + `</h4>` + `<h4>` + `<b>` + `Phone: ` + `</b>` + e.features[0].properties.Phone + `</h4>`;
+              var description = `<h3>` + e.features[0].properties.Name + `</h3>` + `<h4>` + `<b>` + `Date: ` + `</b>` + e.features[0].properties.Date + `</h4>` + `<h4>` + `<b>` + `Location type: ` + `</b>` + e.features[0].properties.Location_type + `</h4>`;
 
               // Ensure that if the map is zoomed out such that multiple
               // copies of the feature are visible, the popup appears
